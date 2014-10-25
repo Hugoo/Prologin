@@ -1,0 +1,19 @@
+* Locate tarball champion.tgz: OK
+
+* Extract data
+------8<----------------------
+prologin.py
+api.py
+interface.hh
+interface.cc
+------>8----------------------
+
+* Compile champion, language "python" detected.
+------8<----------------------
+g++ -fPIC -I/usr/include/python2.5 -I/usr/include/python2.5 -MD -MP -MF ./.interface.o.d  -fPIC -c interface.cc -o interface.o
+g++ -fPIC -I/usr/include/python2.5 -I/usr/include/python2.5 -MD -MP -MF ./.stechec_lime.o.d  -fPIC -c stechec_lime.cc -o stechec_lime.o
+g++ interface.o stechec_lime.o -s -L/usr/lib/python2.5/config -lpthread -ldl -lutil -lm -lpython2.5 -shared -o champion.so 
+------>8----------------------
+
+* Locate champion.so: OK
+
